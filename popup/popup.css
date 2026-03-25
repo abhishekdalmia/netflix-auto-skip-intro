@@ -1,0 +1,122 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0f;
+  --card: #141421;
+  --text: #f2f2f7;
+  --muted: #a8a8b9;
+  --accent: #e50914;
+  --ring: rgba(229, 9, 20, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.wrap {
+  width: 320px;
+  padding: 14px;
+}
+
+.title .name {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.title .sub {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.card {
+  margin-top: 12px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.status {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  min-height: 16px;
+}
+
+.foot {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.slider {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.slider::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: left 160ms ease, background 160ms ease;
+}
+
+.toggle input:focus-visible + .slider {
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.toggle input:checked + .slider {
+  background: rgba(229, 9, 20, 0.8);
+  border-color: rgba(229, 9, 20, 0.9);
+}
+
+.toggle input:checked + .slider::after {
+  left: 22px;
+  background: #fff;
+}
+

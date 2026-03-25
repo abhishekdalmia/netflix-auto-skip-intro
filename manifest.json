@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Auto Skip Intro",
+  "version": "1.0.0",
+  "description": "Automatically clicks Netflix 'Skip Intro' (and similar) buttons while watching.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.netflix.com/*"],
+  "action": {
+    "default_title": "Netflix Auto Skip Intro",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Netflix Auto Skip Intro</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="title">
+        <div class="name">Netflix Auto Skip Intro</div>
+        <div class="sub">Auto-clicks “Skip Intro” when it appears.</div>
+      </header>
+
+      <section class="card">
+        <label class="row" for="enabled">
+          <span class="label">Enabled</span>
+          <span class="toggle">
+            <input id="enabled" type="checkbox" />
+            <span class="slider" aria-hidden="true"></span>
+          </span>
+        </label>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </section>
+
+      <footer class="foot">
+        Works on `netflix.com` watch pages.
+      </footer>
+    </main>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>
+
